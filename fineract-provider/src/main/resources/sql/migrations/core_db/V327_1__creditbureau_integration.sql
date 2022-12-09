@@ -39,8 +39,8 @@ CREATE TABLE `m_creditreport` (
 );
 
 
-ALTER TABLE m_creditbureau_configuration
-DROP FOREIGN KEY cbConfigfk1;
+--ALTER TABLE m_creditbureau_configuration
+--DROP FOREIGN KEY cbConfigfk1;
 
 ALTER TABLE m_creditbureau_configuration
 ADD CONSTRAINT cbConfigfk1
