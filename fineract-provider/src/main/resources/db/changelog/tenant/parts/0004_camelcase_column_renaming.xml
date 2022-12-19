@@ -48,5 +48,18 @@
         <renameColumn tableName="m_creditreport" oldColumnName="creditReports" newColumnName="credit_reports" columnDataType="BLOB"/>
         <renameColumn tableName="m_organisation_creditbureau" oldColumnName="isActive" newColumnName="is_active" columnDataType="BOOLEAN"/>
         <renameColumn tableName="scheduled_email_campaign" oldColumnName="businessRule_id" newColumnName="business_rule_id" columnDataType="INT"/>
+        <rollback>
+            <renameColumn tableName="m_adhoc" oldColumnName="is_active" newColumnName="IsActive" columnDataType="BOOLEAN"/>
+            <renameColumn tableName="m_creditbureau" oldColumnName="implementation_key" newColumnName="implementationKey" columnDataType="VARCHAR(100)"/>
+            <renameColumn tableName="m_creditbureau_loanproduct_mapping" oldColumnName="is_active" newColumnName="isActive" columnDataType="BOOLEAN"/>
+            <renameColumn tableName="m_creditbureau_token" oldColumnName="token_type" newColumnName="tokenType" columnDataType="VARCHAR(128)"/>
+            <renameColumn tableName="m_creditbureau_token" oldColumnName="expires_in" newColumnName="expiresIn" columnDataType="VARCHAR(128)"/>
+            <renameColumn tableName="m_creditbureau_token" oldColumnName="expiry_date" newColumnName="expiryDate" columnDataType="DATE"/>
+            <renameColumn tableName="m_creditreport" oldColumnName="credit_bureau_id" newColumnName="creditBureauId" columnDataType="BIGINT"/>
+            <renameColumn tableName="m_creditreport" oldColumnName="national_id" newColumnName="nationalId" columnDataType="VARCHAR(128)"/>
+            <renameColumn tableName="m_creditreport" oldColumnName="credit_reports" newColumnName="creditReports" columnDataType="BLOB"/>
+            <renameColumn tableName="m_organisation_creditbureau" oldColumnName="is_active" newColumnName="isActive" columnDataType="BOOLEAN"/>
+            <renameColumn tableName="scheduled_email_campaign" oldColumnName="business_rule_id" newColumnName="businessRule_id" columnDataType="INT"/>
+        </rollback>
     </changeSet>
 </databaseChangeLog>
