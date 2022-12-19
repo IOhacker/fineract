@@ -25,6 +25,16 @@
     <changeSet author="fineract" id="1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <preConditions  onFail="HALT">
             <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_adhoc' AND COLUMN_NAME = 'IsActive' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditbureau' AND COLUMN_NAME = 'implementationKey' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditbureau_loanproduct_mapping' AND COLUMN_NAME = 'isActive' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditbureau_token' AND COLUMN_NAME = 'tokenType' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditbureau_token' AND COLUMN_NAME = 'expiresIn' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditbureau_token' AND COLUMN_NAME = 'expiryDate' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditreport' AND COLUMN_NAME = 'creditBureauId' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditreport' AND COLUMN_NAME = 'nationalId' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_creditreport' AND COLUMN_NAME = 'creditReports' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_organisation_creditbureau' AND COLUMN_NAME = 'isActive' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'scheduled_email_campaign' AND COLUMN_NAME = 'businessRule_id' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
         </preConditions>
         <comment>SQL Check Done.</comment>        
         <renameColumn tableName="m_adhoc" oldColumnName="IsActive" newColumnName="is_active" columnDataType="BOOLEAN"/>
