@@ -22,7 +22,7 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
-    <changeSet author="fineract" id="1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <changeSet author="fineract" id="1" objectQuotingStrategy="QUOTE_ALL_OBJECTS" onFail="WARN">
         <preConditions onFail="WARN">        
             <columnExists tableName="m_adhoc" columnName="IsActive" />
             <columnExists tableName="m_creditbureau" columnName="implementationKey" />
