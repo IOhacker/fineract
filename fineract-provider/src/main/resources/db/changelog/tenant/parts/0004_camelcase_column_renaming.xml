@@ -24,7 +24,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="fineract" id="1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <preConditions  onFail="HALT">
-            <sqlCheck  expectedResult="tinyint">SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_adhoc' AND COLUMN_NAME = 'IsActive' AND TABLE_SCHEMA= ${database.defaultSchemaName}</sqlCheck>
+            <sqlCheck  expectedResult="1">SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'm_adhoc' AND COLUMN_NAME = 'IsActive' AND TABLE_SCHEMA='${database.defaultSchemaName}'</sqlCheck>
         </preConditions>
         <comment>SQL Check Done.</comment>        
         <renameColumn tableName="m_adhoc" oldColumnName="IsActive" newColumnName="is_active" columnDataType="BOOLEAN"/>
