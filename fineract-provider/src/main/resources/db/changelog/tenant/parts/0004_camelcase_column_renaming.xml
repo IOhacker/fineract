@@ -31,4 +31,94 @@
             <renameColumn tableName="m_adhoc" oldColumnName="is_active" newColumnName="IsActive" columnDataType="BOOLEAN"/>            
         </rollback>
     </changeSet>
+    <changeSet author="fineract" id="2" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">                    
+            <columnExists tableName="m_creditbureau" columnName="implementationKey" />            
+        </preConditions>        
+        <renameColumn tableName="m_creditbureau" oldColumnName="implementationKey" newColumnName="implementation_key" columnDataType="VARCHAR(100)"/>        
+        <rollback>
+            <renameColumn tableName="m_creditbureau" oldColumnName="implementation_key" newColumnName="implementationKey" columnDataType="VARCHAR(100)"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="3" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditbureau_loanproduct_mapping" columnName="IsActive" />
+        </preConditions>
+        <renameColumn tableName="m_creditbureau_loanproduct_mapping" oldColumnName="isActive" newColumnName="is_active" columnDataType="BOOLEAN"/>
+        <rollback>
+            <renameColumn tableName="m_creditbureau_loanproduct_mapping" oldColumnName="is_active" newColumnName="isActive" columnDataType="BOOLEAN"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="4" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditbureau_token" columnName="tokenType" />
+        </preConditions>
+        <renameColumn tableName="m_creditbureau_token" oldColumnName="tokenType" newColumnName="token_type" columnDataType="VARCHAR(128)"/>
+        <rollback>
+            <renameColumn tableName="m_creditbureau_token" oldColumnName="token_type" newColumnName="tokenType" columnDataType="VARCHAR(128)"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="5" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditbureau_token" columnName="expiresIn" />
+        </preConditions>
+        <renameColumn tableName="m_creditbureau_token" oldColumnName="expiresIn" newColumnName="expires_in" columnDataType="VARCHAR(128)"/>
+        <rollback>
+            <renameColumn tableName="m_creditbureau_token" oldColumnName="expires_in" newColumnName="expiresIn" columnDataType="VARCHAR(128)"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="6" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditbureau_token" columnName="expiryDate" />
+        </preConditions>
+        <renameColumn tableName="m_creditbureau_token" oldColumnName="expiryDate" newColumnName="expiry_date" columnDataType="DATE"/>
+        <rollback>
+            <renameColumn tableName="m_creditbureau_token" oldColumnName="expiry_date" newColumnName="expiryDate" columnDataType="DATE"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="7" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditreport" columnName="creditBureauId" />
+        </preConditions>
+        <renameColumn tableName="m_creditreport" oldColumnName="creditBureauId" newColumnName="credit_bureau_id" columnDataType="BIGINT"/>
+        <rollback>
+            <renameColumn tableName="m_creditreport" oldColumnName="credit_bureau_id" newColumnName="creditBureauId" columnDataType="BIGINT"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="8" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditreport" columnName="nationalId" />
+        </preConditions>
+        <renameColumn tableName="m_creditreport" oldColumnName="nationalId" newColumnName="national_id" columnDataType="VARCHAR(128)"/>
+        <rollback>
+            <renameColumn tableName="m_creditreport" oldColumnName="national_id" newColumnName="nationalId" columnDataType="VARCHAR(128)"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="9" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_creditreport" columnName="creditReports" />
+        </preConditions>
+        <renameColumn tableName="m_creditreport" oldColumnName="creditReports" newColumnName="credit_reports" columnDataType="BLOB"/>
+        <rollback>
+            <renameColumn tableName="m_creditreport" oldColumnName="credit_reports" newColumnName="creditReports" columnDataType="BLOB"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="10" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="m_organisation_creditbureau" columnName="IsActive" />
+        </preConditions>
+        <renameColumn tableName="m_organisation_creditbureau" oldColumnName="isActive" newColumnName="is_active" columnDataType="BOOLEAN"/>
+        <rollback>
+            <renameColumn tableName="m_organisation_creditbureau" oldColumnName="is_active" newColumnName="isActive" columnDataType="BOOLEAN"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="fineract" id="11" objectQuotingStrategy="QUOTE_ALL_OBJECTS" failOnError="false">
+        <preConditions onFail="WARN">        
+            <columnExists tableName="scheduled_email_campaign" columnName="businessRule_id" />
+        </preConditions>
+        <renameColumn tableName="scheduled_email_campaign" oldColumnName="businessRule_id" newColumnName="business_rule_id" columnDataType="INT"/>
+        <rollback>
+            <renameColumn tableName="scheduled_email_campaign" oldColumnName="business_rule_id" newColumnName="businessRule_id" columnDataType="INT"/>
+        </rollback>
+    </changeSet>
 </databaseChangeLog>
