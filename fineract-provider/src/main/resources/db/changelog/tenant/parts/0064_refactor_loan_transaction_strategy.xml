@@ -64,8 +64,7 @@
             <column name="loan_transaction_strategy_name" value="Early Repayment Strategy" />
             <where>loan_transaction_strategy_id = 7</where>
         </update>
-        <dropForeignKeyConstraint baseTableName="m_loan" constraintName="FK_loan_ltp_strategy" />
-        <!--
+        <!--<dropForeignKeyConstraint baseTableName="m_loan" constraintName="FK_loan_ltp_strategy" />
         <dropColumn tableName="m_loan_product" columnName="loan_transaction_strategy_id" />
         -->
     </changeSet>
