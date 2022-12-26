@@ -21,7 +21,7 @@
 -->
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="fineract" id="1">
-        <addColumn tableName="m_loan">
+        <!--<addColumn tableName="m_loan">
             <column defaultValue="-" name="loan_transaction_strategy_code" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
@@ -29,6 +29,7 @@
                 <constraints nullable="false"/>
             </column>
         </addColumn>
+        -->
         <update tableName="m_loan">
             <column name="loan_transaction_strategy_code" value="mifos-standard-strategy" />
             <column name="loan_transaction_strategy_name" value="Penalties, Fees, Interest, Principal order" />
@@ -69,7 +70,7 @@
         -->
     </changeSet>
     <changeSet author="fineract" id="2">
-        <addColumn tableName="m_product_loan">
+        <!--<addColumn tableName="m_product_loan">
             <column defaultValue="-" name="loan_transaction_strategy_code" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
@@ -77,6 +78,7 @@
                 <constraints nullable="false"/>
             </column>
         </addColumn>
+        -->
         <update tableName="m_product_loan">
             <column name="loan_transaction_strategy_code" value="mifos-standard-strategy" />
             <column name="loan_transaction_strategy_name" value="Penalties, Fees, Interest, Principal order" />
